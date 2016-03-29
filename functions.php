@@ -27,9 +27,6 @@ include CGU_INC . 'taxos/people-type.php';
 
 
 // Include lib classes
-include( CGU_INC . 'libraries/cmb2/init.php' );
-include( CGU_INC . 'libraries/cmb2-attached-posts/cmb2-attached-posts-field.php' );
-include( CGU_INC . 'libraries/cmb2-post-search-field/cmb2_post_search_field.php' );
 
 
 // Run the setup functions
