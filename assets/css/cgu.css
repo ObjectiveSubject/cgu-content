@@ -259,6 +259,109 @@ a {
 .clearfix:after {
   clear: both; }
 
+@font-face {
+  font-family: "GothamNarrow";
+  src: url("../fonts/GothamNarrow-Light.otf");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GothamNarrow";
+  src: url("../fonts/GothamNarrow-LightItalic.otf");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: "GothamNarrow";
+  src: url("../fonts/GothamNarrow-Book.otf");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GothamNarrow";
+  src: url("../fonts/GothamNarrow-BookItalic.otf");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: "GothamNarrow";
+  src: url("../fonts/GothamNarrow-Bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/Gotham-Light.otf");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/Gotham-Bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+
+.gotham {
+  font-family: "Gotham"; }
+
+.gotham-narrow {
+  font-family: "GothamNarrow"; }
+
+@font-face {
+  font-family: 'cgu-ui';
+  src: url("fonts/cgu-ui.eot?m43kkw");
+  src: url("fonts/cgu-ui.eot?m43kkw#iefix") format("embedded-opentype"), url("fonts/cgu-ui.ttf?m43kkw") format("truetype"), url("fonts/cgu-ui.woff?m43kkw") format("woff"), url("fonts/cgu-ui.svg?m43kkw#drucker-ui") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.icon, [class^="icon-"], [class*=" icon-"] {
+  font-family: 'cgu-ui';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-logo:before {
+  content: "\e900"; }
+
+.icon-facebook:before {
+  content: "\e606"; }
+
+.icon-twitter:before {
+  content: "\e602"; }
+
+.icon-linkedin:before {
+  content: "\e617"; }
+
+.icon-youtube:before {
+  content: "\e901"; }
+
+.icon-google:before {
+  content: "\e902"; }
+
+.icon-close:before {
+  content: "\e605"; }
+
+.icon-arrow-up:before {
+  content: "\e60c"; }
+
+.icon-arrow-right:before {
+  content: "\e60d"; }
+
+.icon-arrow-down:before {
+  content: "\e60e"; }
+
+.icon-arrow-left:before {
+  content: "\e60f"; }
+
+.icon-search:before {
+  content: "\e903"; }
+
 /* Typography
  * ------------------------------------------ */
 html {
@@ -270,7 +373,7 @@ input,
 select,
 textarea {
   color: #333;
-  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Arial", sans-serif;
+  font-family: "GothamNarrow", "Arial", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400; }
@@ -286,7 +389,7 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
   font-size: 4rem;
   line-height: 1em;
-  font-family: "Gotham SSm A", "Gotham SSm B", "Arial", sans-serif;
+  font-family: "Gotham", "Arial", sans-serif;
   font-weight: 700;
   text-transform: uppercase; }
 
@@ -304,7 +407,7 @@ h4, .h4 {
   font-size: 0.88rem;
   line-height: 1.4em;
   text-transform: uppercase;
-  font-family: "Gotham SSm A", "Gotham SSm B", "Arial", sans-serif;
+  font-family: "Gotham", "Arial", sans-serif;
   font-weight: 700; }
 
 h5, .h5 {
@@ -402,61 +505,6 @@ big,
 
 .caps {
   text-transform: uppercase; }
-
-@font-face {
-  font-family: 'cgu-ui';
-  src: url("fonts/cgu-ui.eot?m43kkw");
-  src: url("fonts/cgu-ui.eot?m43kkw#iefix") format("embedded-opentype"), url("fonts/cgu-ui.ttf?m43kkw") format("truetype"), url("fonts/cgu-ui.woff?m43kkw") format("woff"), url("fonts/cgu-ui.svg?m43kkw#drucker-ui") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-.icon, [class^="icon-"], [class*=" icon-"] {
-  font-family: 'cgu-ui';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-logo:before {
-  content: "\e900"; }
-
-.icon-facebook:before {
-  content: "\e606"; }
-
-.icon-twitter:before {
-  content: "\e602"; }
-
-.icon-linkedin:before {
-  content: "\e617"; }
-
-.icon-youtube:before {
-  content: "\e901"; }
-
-.icon-google:before {
-  content: "\e902"; }
-
-.icon-close:before {
-  content: "\e605"; }
-
-.icon-arrow-up:before {
-  content: "\e60c"; }
-
-.icon-arrow-right:before {
-  content: "\e60d"; }
-
-.icon-arrow-down:before {
-  content: "\e60e"; }
-
-.icon-arrow-left:before {
-  content: "\e60f"; }
-
-.icon-search:before {
-  content: "\e903"; }
 
 .show {
   display: block; }
@@ -576,7 +624,7 @@ input[type="submit"] {
   box-shadow: none;
   color: white;
   display: inline-block;
-  font-family: "Gotham SSm A", "Gotham SSm B", "Arial", sans-serif;
+  font-family: "Gotham", "Arial", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
@@ -978,7 +1026,7 @@ th {
   .table > thead > tr > th,
   .table > tbody > tr > th,
   .table > tfoot > tr > th {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Arial", sans-serif; }
+    font-family: "Gotham", "Arial", sans-serif; }
   .table > thead > tr > th,
   .table > thead > tr > td,
   .table > tbody > tr > th,
