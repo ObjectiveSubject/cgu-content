@@ -11,11 +11,16 @@ $specialization = get_field('areas_of_specialization'); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-		<div class="h4">Program</div>
+		<div class="h4"><a href="<?php echo home_url(); ?>">« Home</a> / Program</div>
 		<h2><?php the_title(); ?></h2>
-		<?php echo ( $masters ) ? '<p class="hug"><strong>'.$masters.'</strong></p>' : ''; ?>
-		<?php echo ( $phd ) ? '<p class="hug"><strong>'.$phd.'</strong></p>' : ''; ?>
-		<?php echo ( $certificate ) ? '<p class="hug"><strong>'.$certificate.'</strong></p>' : ''; ?>
+		<?php echo ( $masters ) ? '<h3>'.$masters.'</h3>' : ''; ?>
+		<?php echo ( $phd ) ? '<h3 class="hug">'.$phd.'</h3>' : ''; ?>
+		<?php echo ( $certificate ) ? '<h3 class="hug">'.$certificate.'</h3>' : ''; ?>
+
+		<?php if ( $specialization ) : ?>
+			<h4>Areas of Specialization</h4>
+			<p class="hug"><?php echo $specialization; ?></p>
+		<?php endif; ?>
 
 		<h4>Schools</h4>
 		<ul>
@@ -40,11 +45,6 @@ $specialization = get_field('areas_of_specialization'); ?>
 				<?php endif; ?>
 			<?php endforeach; ?>
 		</ul>
-
-		<?php if ( $specialization ) : ?>
-			<h4>Areas of Specialization</h4>
-			<p class="hug"><?php echo $specialization; ?></p>
-		<?php endif; ?>
 
 		<?php the_content(); ?>
 		<hr>
