@@ -12,3 +12,12 @@
 <body <?php body_class(); ?>>
 
     <div id="page" class="outer-container">
+
+        <h1 class="site-title h3 strong">Claremont Graduate University</h1>
+
+        <?php $description = get_bloginfo('description');
+        if ( $description ) : ?>
+            <div class="h3 site-description hug"><?php echo $description; ?></div>
+        <?php endif; ?>
+
+        <hr>

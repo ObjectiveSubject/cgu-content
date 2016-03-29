@@ -5,8 +5,6 @@
 
 get_header(); ?>
 
-	<h1>Claremont Graduate University</h1>
-
 	<h3 class="h4">Schools</h3>
 	<?php $schools = get_posts(array('post_type'=>'school', 'posts_per_page'=>500)); ?>
 	<ul class="push list-unstyled" style="-webkit-columns: 2">
