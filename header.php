@@ -18,6 +18,8 @@
         <?php $description = get_bloginfo('description');
         if ( $description ) : ?>
             <div class="h3 site-description hug"><?php echo $description; ?></div>
+        <?php else : ?>
+            <div class="h3 site-description hug">Add a site description</div>
         <?php endif; ?>
 
         <hr>
