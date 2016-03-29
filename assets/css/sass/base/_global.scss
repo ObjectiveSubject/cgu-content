@@ -1,0 +1,84 @@
+
+/* Global
+ * ------------------------------------------- */
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: $color_selection_text;
+    background: $color_background_selection;
+}
+::selection {
+    color: $color_selection_text;
+    background: $color_background_selection;
+}
+
+/* Links
+ * ------------------------------------------- */
+
+a {
+	color: $color_link;
+	text-decoration: none;
+	transition: all 250ms ease;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color_link_hover;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+
+/* Text meant only for screen readers.
+ * ------------------------------------------------- */
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #21759b;
+		display: block;
+		font-size: rem(0.875);
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/* Clearings
+ * ------------------------------------------------- */
+
+.clearfix {
+	@include clearfix;
+}

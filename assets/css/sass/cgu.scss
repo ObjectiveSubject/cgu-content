@@ -1,0 +1,37 @@
+/**
+ * CGU
+ * http://www.cgu.edu
+ *
+ * Copyright (c) 2016 Objective Subject
+ * Licensed under the GPLv2+ license.
+ */
+
+@import
+    "vendor/bourbon/bourbon",
+    "vendor/neat/neat";
+
+@import
+    "base/variables",
+    "base/mixins",
+    "base/normalize",
+    "base/global",
+    "base/typography",
+    "base/icons",
+    "base/helpers";
+
+@import
+    "components/breadcrumbs",
+    "components/buttons",
+    "components/dropdowns",
+    "components/forms",
+    "components/media",
+    "components/navigation",
+    "components/post-list",
+    "components/sliders",
+    "components/tables";
+
+@import
+    "layout/document",
+    "layout/header",
+    "layout/content",
+    "layout/footer";

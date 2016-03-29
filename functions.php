@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * CGU functions and definitions
+ */
+
+// Useful global constants
+define( 'CGU_VERSION',      '0.1.0' );
+define( 'CGU_URL',          get_stylesheet_directory_uri() );
+define( 'CGU_TEMPLATE_URL', get_template_directory_uri() );
+define( 'CGU_PATH',         get_template_directory() . '/' );
+define( 'CGU_INC',          CGU_PATH . 'includes/' );
+
+// Include compartmentalized functions
+require_once CGU_INC . 'functions/core.php';
+
+// Include Taxos and custom Post types
+include CGU_INC . 'post-types.php';
+include CGU_INC . 'taxos.php';
+
+// Include lib classes
+
+// Run the setup functions
+CGU\Core\setup();
+
+
+
+
+/**
+ * Get post by slug
+ *
+ * @param string Post Slug.
+ * @return post object
+ */
+function get_post_by_slug( $slug, $type='post' ){
+    $posts = get_posts( array(
+            'name' => $slug,
+            'posts_per_page' => 1,
+            'post_type' => $type,
+            'post_status' => 'publish'
+    ));
+
+    if( ! $posts ) {
+        return false;
+    }
+
+    return $posts[0];
+}

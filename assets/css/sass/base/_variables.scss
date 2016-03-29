@@ -1,0 +1,97 @@
+// Structure
+// ============================================ /
+$max-width: rem(1000) !global;
+
+$container_padding: 20px;
+
+$sm: 500px;
+$md: 768px;
+$lg: 1000px;
+$xl: 1500px;
+
+
+// Colors
+// ============================================ /
+$light_gray: #e4e1d7;
+$copper: #9e9270;
+$orange: #a75b00;
+$gold: #eb9719;
+$red: #b61f29;
+$dark_red: darken($red, 17%);
+$purple: #56416f;
+$navy: #0c5277;
+$blue: #00A6CE;
+$granite: #1b606a;
+$gray: tint(black, 60%);
+$text_color: #333;
+
+$color_map: (
+	'light-gray' : $light_gray,
+	'copper' 	 : $copper,
+	'orange' 	 : $orange,
+	'gold' 		 : $gold,
+	'red' 		 : $red,
+	'dark-red'	 : $dark_red,
+	'purple' 	 : $purple,
+	'navy' 		 : $navy,
+	'blue' 		 : $blue,
+	'granite' 	 : $granite,
+	'gray'		 : $gray,
+	'text-color' : #333
+);
+
+$color_text_main: #333;
+$color_text_heading: #333;
+
+$color_link: $red;
+$color_link_visited: $red;
+$color_link_hover: $blue;
+
+$color_code: #0071BC;
+
+$color_blockquote: #222;
+
+$color_background_body: #fff;
+$color_background_hr: #ccc;
+$color_background_button: $blue;
+$color_background_button_hover: $navy;
+$color_background_pre: #eee;
+
+$color_border_button: #ccc #ccc #bbb;
+$color_border_button_hover: #ccc #bbb #aaa;
+$color_border_button_focus: #aaa #bbb #bbb;
+
+$color_background_selection: lightblue;
+$color_selection_text: $color_text_main;
+
+$color_border_input: #ccc;
+$color_border_input_hover: #ccc;
+$color_border_input_focus: #ccc;
+
+$color_text_input: #333;
+$color_text_input_hover: #111;
+$color_text_input_focus: $red;
+
+$color_text_muted: #aaa;
+
+
+// Typography
+// ============================================ /
+$font_main: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Arial", sans-serif;
+$font_heading: "Gotham SSm A", "Gotham SSm B", "Arial", sans-serif;
+$font_code: "Menlo", monospace;
+$font_pre: "Menlo", monospace;
+$leading: 1.5rem;
+$font_line_height_pre: 1.6rem;
+
+
+// Tables
+// ============================================ /
+$table_bg: transparent;
+$table-bg-accent: tint($light_gray, 75%);
+$table_bg_hover: $light_gray;
+$table_bg_nested: transparent;
+$table_cell_padding: 0.25em;
+$line_height_base: 1em;
+$table_border_color: $light_gray;
+$table_condensed_cell_padding: 5px;

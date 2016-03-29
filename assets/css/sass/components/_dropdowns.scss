@@ -1,0 +1,34 @@
+.dropdown-group {
+    @include clearfix;
+}
+
+.dropdown-list-item {
+	@include media($md) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+	.dropdown-content {
+		display: none;
+	}
+	.dropdown-title {
+		position: relative;
+		transition: all 300ms ease;
+        padding-right: 1em;
+		&.active, &:hover {
+			color: #6c1218;
+			cursor: pointer;
+		}
+		&.active {
+			.icon:before {
+				content: $icon-arrow-up;
+			}
+		}
+	}
+
+	.icon {
+		font-size: 1rem;
+		position: absolute;
+		right: 0;
+		top: 0.5em;
+	}
+}

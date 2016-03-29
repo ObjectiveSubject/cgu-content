@@ -1,0 +1,26 @@
+.breadcrumbs {
+	font-weight: 400;
+	margin-top: 1.5rem;
+	@include media(lg) {
+		margin-top: 2.5rem;
+	}
+
+	.has-post-thumbnail .page-header &,
+	.has-hero-slider .page-header & {
+		color: white;
+		a {
+			color: white;
+			&:hover {
+				color: $color_link_hover;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	span > span {
+		font-weight: 500;
+	}
+}

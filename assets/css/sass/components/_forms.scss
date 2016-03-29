@@ -1,0 +1,60 @@
+
+/* Forms
+ * ------------------------------------------- */
+
+label {
+     display: block;
+     width: 100%;
+     padding-bottom: 0.25em;
+     &.inline {
+         display: inline;
+         width: auto;
+         padding-bottom: 0;
+     }
+}
+
+.cgu-form {
+    margin: $leading 0 0;
+}
+
+.form-group {
+    display: block;
+    clear: both;
+    margin-top: 1rem;
+    @include clearfix;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+textarea {
+    &.form-field {
+        display: block;
+        width: 100%;
+        color: $color_text_input;
+        border: 1px solid $color_border_input;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 0.5em;
+
+        &.inline {
+            display: inline;
+            width: auto;
+        }
+
+        &:hover {
+            color: $color_text_input_hover;
+        }
+        &:focus {
+            color: $color_text_input_focus;
+        }
+
+        @include placeholder {
+            color: $light_gray;
+        }
+    }
+}
