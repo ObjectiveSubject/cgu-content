@@ -10,23 +10,55 @@ get_header(); ?>
 		<p class="h4"><a href="<?php echo home_url(); ?>">« Home</a> / Area of Study</p>
 		<h2><?php the_title(); ?></h2>
 
+		<?php the_content(); ?>
+
 		<h3>Programs</h3>
 		<?php
-		$schools = get_terms('_school');
-		foreach($schools as $school) :
+		$current_study_area = get_term_by('slug', $post->post_name, '_study_area');
+		$child_areas = get_terms('_study_area', array('parent'=>$current_study_area->term_id));
 
+		if ( !empty( $child_areas ) ) :
+
+			foreach($child_areas as $area) : ?>
+
+				<?php
+				$args = array(
+					'post_type'=>'program',
+					'orderby' => 'title',
+					'order'=>'ASC',
+					'posts_per_page'=>500,
+					'tax_query' => array(
+						array(
+							'taxonomy' => '_study_area',
+							'field'    => 'slug',
+							'terms'    => $area->slug
+						)
+					)
+				);
+				$programs = get_posts( $args );
+				if ( $programs ) : ?>
+
+					<h4><?php echo $area->name; ?></h4>
+
+					<ul class="push list-unstyled" style="-webkit-columns: 2">
+						<?php foreach ( $programs as $program ) : ?>
+							<li class="hug"><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></li>
+						<?php endforeach; ?>
+					</ul>
+
+				<?php endif; ?>
+
+			<?php endforeach; ?>
+
+		<?php else : ?>
+
+			<?php
 			$args = array(
 				'post_type'=>'program',
 				'orderby' => 'title',
 				'order'=>'ASC',
 				'posts_per_page'=>500,
 				'tax_query' => array(
-					'relation' => 'AND',
-					array(
-						'taxonomy' => '_school',
-						'field'    => 'slug',
-						'terms'    => $school->slug
-					),
 					array(
 						'taxonomy' => '_study_area',
 						'field'    => 'slug',
@@ -35,10 +67,8 @@ get_header(); ?>
 				)
 			);
 			$programs = get_posts( $args );
-
 			if ( $programs ) : ?>
 
-				<h4><a href="<?php echo site_url("school/{$school->slug}/"); ?>"><?php echo $school->name; ?></a></h4>
 				<ul class="push list-unstyled" style="-webkit-columns: 2">
 					<?php foreach ( $programs as $program ) : ?>
 						<li class="hug"><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></li>
@@ -47,9 +77,8 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-		<?php endforeach; ?>
+		<?php endif; ?>
 
-		<?php the_content(); ?>
 		<hr>
 		<p><a href="<?php echo home_url(); ?>">« Home</a></p>
 	<?php endif; ?>
