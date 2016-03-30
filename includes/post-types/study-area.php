@@ -32,11 +32,11 @@ function register_study_area() {
 			'capability_type' => 'post',
 			'exclude_from_search' => true,
 			'map_meta_cap' => true,
-			'hierarchical' => false,
+			'hierarchical' => true,
 			'rewrite' => array('slug' => 'area-of-study', 'with_front' => false),
 			'query_var' => true,
 			'menu_position' => 5,
-			'supports' => array('title','editor'),
+			'supports' => array('title','editor', 'page-attributes'),
 			'menu_icon' => 'dashicons-welcome-learn-more',
 			'labels' => $labels
 		)
