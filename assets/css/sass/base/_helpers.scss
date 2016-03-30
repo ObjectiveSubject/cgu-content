@@ -48,7 +48,18 @@
 // Links
 // ======================================= /
 a.no-decoration { text-decoration: none !important; }
-
+a.black-link {
+	color: $color_text_main;
+	&:hover {
+		color: $color_link_hover;
+	}
+}
+a.blue-link {
+	color: $blue;
+	&:hover {
+		color: $red;
+	}
+}
 
 // Media Size indicator
 // ======================================= /

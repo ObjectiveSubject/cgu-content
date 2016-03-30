@@ -66,10 +66,13 @@ p {
 	line-height: $leading;
 	margin-top: $leading;
 	margin-bottom: 0;
+	&.small {
+		line-height: $leading * 0.75;
+	}
 }
 
 ul, ol {
-	margin: 0 0 1.5em;
+	margin: $leading 0 0;
 	padding: 0 0 0 2em;
 }
 
@@ -154,7 +157,7 @@ hr {
 	background-color: $color_background_hr;
 	border: 0;
 	height: 1px;
-	margin: 2rem 0;
+	margin: $leading 0 0;
 	width: 100%;
 }
 

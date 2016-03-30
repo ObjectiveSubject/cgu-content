@@ -10,6 +10,8 @@ get_header(); ?>
 		<p class="h4"><a href="<?php echo home_url(); ?>">« Home</a> / Area of Study</p>
 		<h2><?php the_title(); ?></h2>
 
+		<?php the_content(); ?>
+
 		<h3>Programs</h3>
 		<?php
 		$schools = get_terms('_school');
@@ -38,10 +40,25 @@ get_header(); ?>
 
 			if ( $programs ) : ?>
 
-				<h4><a href="<?php echo site_url("school/{$school->slug}/"); ?>"><?php echo $school->name; ?></a></h4>
-				<ul class="push list-unstyled" style="-webkit-columns: 2">
+				<h4 class="push-double"><a href="<?php echo site_url("school/{$school->slug}/"); ?>" class="blue-link"><?php echo $school->name; ?></a></h4>
+				<ul class="hug list-unstyled grid">
 					<?php foreach ( $programs as $program ) : ?>
-						<li class="hug"><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></li>
+						<?php
+							$masters = get_field('masters_degree_awarded', $program->ID);
+							$phd = get_field('doctoral_degree_awarded', $program->ID);
+							$certificate = get_field('certificate_awarded', $program->ID);
+						?>
+						<li class="grid-node col-3">
+							<hr>
+							<h3><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></h3>
+							<p class="hug small strong">
+								<?php
+								echo ($masters) ? "{$masters}<br>" : "";
+								echo ($phd) ? "{$phd}<br>" : "";
+								echo ($certificate) ? $certificate : "";
+								?>
+							</p>
+						</li>
 					<?php endforeach; ?>
 				</ul>
 
@@ -49,9 +66,6 @@ get_header(); ?>
 
 		<?php endforeach; ?>
 
-		<?php the_content(); ?>
-		<hr>
-		<p><a href="<?php echo home_url(); ?>">« Home</a></p>
 	<?php endif; ?>
 
 <?php get_footer();

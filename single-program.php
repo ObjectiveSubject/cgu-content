@@ -17,6 +17,8 @@ $specialization = get_field('areas_of_specialization'); ?>
 		<?php echo ( $phd ) ? '<h3 class="hug">'.$phd.'</h3>' : ''; ?>
 		<?php echo ( $certificate ) ? '<h3 class="hug">'.$certificate.'</h3>' : ''; ?>
 
+		<?php the_content(); ?>
+
 		<?php if ( $specialization ) : ?>
 			<h4>Areas of Specialization</h4>
 			<p class="hug"><?php echo $specialization; ?></p>
@@ -46,9 +48,6 @@ $specialization = get_field('areas_of_specialization'); ?>
 			<?php endforeach; ?>
 		</ul>
 
-		<?php the_content(); ?>
-		<hr>
-		<p><a href="<?php echo home_url(); ?>">« Home</a></p>
 	<?php endif; ?>
 
 <?php get_footer();

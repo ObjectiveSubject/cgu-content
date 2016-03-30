@@ -1,0 +1,19 @@
+.grid {
+    @include clearfix;
+}
+
+.grid-node {
+    @for $i from 1 through $grid-columns {
+        $last: $grid-columns/$i;
+        &.col-#{$i} {
+            @include span-columns($i);
+            &:nth-child(#{$last}n) {
+                margin-right: 0;
+            }
+            &:nth-child(#{$last}n + 1) {
+                clear: left;
+            }
+        }
+    }
+
+}
