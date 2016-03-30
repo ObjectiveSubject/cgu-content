@@ -40,7 +40,8 @@ function scripts( $debug = false ) {
  * @return void
  */
 function styles( $debug = false ) {
-	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	// $min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	$min = '';
 
 	wp_enqueue_style(
 		'cgu',
