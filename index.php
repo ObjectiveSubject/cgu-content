@@ -14,7 +14,7 @@ get_header(); ?>
 	</ul>
 
 	<h3 class="h4">Areas of Study</h3>
-	<?php $schools = get_posts(array('post_type'=>'study_area', 'posts_per_page'=>500)); ?>
+	<?php $schools = get_posts(array('post_type'=>'study_area', 'posts_per_page'=>500, 'post_parent'=>0)); ?>
 	<ul class="push list-unstyled" style="-webkit-columns: 2">
 		<?php foreach ( $schools as $school ) : ?>
 			<li class="hug"><a href="<?php echo get_permalink($school->ID); ?>"><?php echo get_the_title($school->ID); ?></a></li>
