@@ -49,6 +49,7 @@ function my_program_columns($columns) {
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
 		'title' => 'Title',
+		'degrees' => 'Degrees',
         'schools' => 'Schools',
         'study_areas' => 'Areas of Study',
 		'date' => 'Date',
@@ -74,6 +75,15 @@ function my_program_custom_columns($column, $post_id) {
             }
             echo implode(', ', $term_string);
 			break;
+		case "degrees" :
+            $terms = get_the_terms($post_id, 'degree');
+            $term_string = array();
+            foreach( (array) $terms as $term ) {
+                array_push( $term_string, '<a href="'.admin_url("edit.php?degree={$term->slug}&post_type=program").'">' . $term->name . '</a>' );
+            }
+            echo implode(', ', $term_string);
+			break;
+
 	}
 }
 add_action("manage_program_posts_custom_column", "my_program_custom_columns", 10, 2);

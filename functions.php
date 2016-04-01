@@ -24,6 +24,7 @@ include CGU_INC . 'post-types/people.php';
 include CGU_INC . 'taxos/school.php';
 include CGU_INC . 'taxos/study-area.php';
 include CGU_INC . 'taxos/people-type.php';
+include CGU_INC . 'taxos/degree.php';
 
 
 // Include lib classes

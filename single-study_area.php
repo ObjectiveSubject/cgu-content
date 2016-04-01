@@ -73,11 +73,6 @@ get_header(); ?>
 				<ul class="hug list-unstyled grid">
 
 					<?php foreach ( $programs as $program ) : ?>
-						<?php
-							$masters = get_field('masters_degree_awarded', $program->ID);
-							$phd = get_field('doctoral_degree_awarded', $program->ID);
-							$certificate = get_field('certificate_awarded', $program->ID);
-						?>
 						<?php include('content-program-listing.php'); ?>
 					<?php endforeach; ?>
 				</ul>
