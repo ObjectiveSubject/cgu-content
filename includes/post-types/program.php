@@ -49,9 +49,10 @@ function my_program_columns($columns) {
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
 		'title' => 'Title',
+		'degree_field' => 'Degree Field',
 		'degrees' => 'Degrees',
-        'schools' => 'Schools',
-        'study_areas' => 'Areas of Study',
+        // 'schools' => 'Schools',
+        // 'study_areas' => 'Areas of Study',
 		'date' => 'Date',
 	);
 	return $columns;
@@ -74,6 +75,11 @@ function my_program_custom_columns($column, $post_id) {
                 array_push( $term_string, '<a href="'.admin_url("edit.php?_study_area={$term->slug}&post_type=program").'">' . $term->name . '</a>' );
             }
             echo implode(', ', $term_string);
+			break;
+		case "degree_field" :
+			echo get_field('masters_degree_awarded', $post_id) . '<br>';
+			echo get_field('doctoral_degree_awarded', $post_id) . '<br>';
+			echo get_field('certificate_awarded', $post_id);
 			break;
 		case "degrees" :
             $terms = get_the_terms($post_id, 'degree');
