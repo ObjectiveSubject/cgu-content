@@ -50,8 +50,20 @@ function update_shadow_study_area( $post_id ) {
     // If the movie already exists, don't create a term.
     $term = get_term_by( 'name', $study_area->post_title, '_study_area' );
     if ( false === $term ) {
-        // Create the term
-        wp_insert_term( $study_area->post_title, '_study_area' );
+
+		// Create the term
+		if ( $study_area->post_parent !== 0 ) {
+
+			$parent = get_post( $study_area->post_parent );
+			$parent_term = get_term_by('slug', $parent->post_name, '_study_area');
+			wp_insert_term( $study_area->post_title, '_study_area', array(
+				'parent' => $parent_term->term_id
+			) );
+
+		} else {
+			wp_insert_term( $study_area->post_title, '_study_area' );
+		}
+
     }
 }
 add_action( 'save_post', 'update_shadow_study_area' );
