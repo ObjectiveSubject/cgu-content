@@ -1,5 +1,5 @@
-<li class="grid-node col-3">
-    <hr>
+<li class="grid-node col-3 push">
+    <?php echo ( $count === 1 ) ? '<p class="hug degree-label strong">'.$degree->name.'</p>' : '<hr>'; ?>
     <h3><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></h3>
     <p class="hug small strong text-muted">
         <?php

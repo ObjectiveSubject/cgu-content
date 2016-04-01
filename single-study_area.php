@@ -14,6 +14,7 @@ get_header(); ?>
 
 		<h3>Programs</h3>
 		<?php
+		$degrees = get_terms('degree', array('orderby' => 'count', 'order' => 'DESC'));
 		$current_study_area = get_term_by('slug', $post->post_name, '_study_area');
 		$child_areas = get_terms('_study_area', array('parent'=>$current_study_area->term_id));
 
@@ -38,13 +39,20 @@ get_header(); ?>
 				$programs = get_posts( $args );
 				if ( $programs ) : ?>
 
-					<h4><?php echo $area->name; ?></h4>
+					<h4 class="push-double"><?php echo $area->name; ?></h4>
 
-					<ul class="push list-unstyled grid">
-						<?php foreach ( $programs as $program ) : ?>
-							<?php include('content-program-listing.php'); ?>
-						<?php endforeach; ?>
-					</ul>
+					<?php foreach ( $degrees as $degree ) : ?>
+						<ul class="hug list-unstyled grid">
+							<?php
+							$count = 1;
+							foreach ( $programs as $program ) {
+								if ( has_term($degree->slug, 'degree', $program->ID) ) {
+									include('content-program-listing.php');
+									$count++;
+								}
+							} ?>
+						</ul>
+					<?php endforeach; ?>
 
 				<?php endif; ?>
 
@@ -70,12 +78,18 @@ get_header(); ?>
 			if ( $programs ) : ?>
 
 				<h4 class="push-double"><a href="<?php echo site_url("school/{$school->slug}/"); ?>" class="blue-link"><?php echo $school->name; ?></a></h4>
-				<ul class="hug list-unstyled grid">
-
-					<?php foreach ( $programs as $program ) : ?>
-						<?php include('content-program-listing.php'); ?>
-					<?php endforeach; ?>
-				</ul>
+				<?php foreach ( $degrees as $degree ) : ?>
+					<ul class="hug list-unstyled grid">
+						<?php
+						$count = 1;
+						foreach ( $programs as $program ) {
+							if ( has_term($degree->slug, 'degree', $program->ID) ) {
+								include('content-program-listing.php');
+								$count++;
+							}
+						} ?>
+					</ul>
+				<?php endforeach; ?>
 
 			<?php endif; ?>
 

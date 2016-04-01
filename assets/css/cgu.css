@@ -1269,6 +1269,9 @@ th {
   .grid-node.col-12:nth-child(1n + 1) {
     clear: left; }
 
+.degree-label {
+  border-bottom: 1px solid #ccc; }
+
 .site-footer {
   margin-top: 4.5rem;
   padding-bottom: 1.5rem;
