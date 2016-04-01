@@ -508,6 +508,9 @@ big,
 .caps {
   text-transform: uppercase; }
 
+.text-muted {
+  color: #999; }
+
 .show {
   display: block; }
 

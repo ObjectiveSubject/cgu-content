@@ -40,9 +40,9 @@ get_header(); ?>
 
 					<h4><?php echo $area->name; ?></h4>
 
-					<ul class="push list-unstyled" style="-webkit-columns: 2">
+					<ul class="push list-unstyled grid">
 						<?php foreach ( $programs as $program ) : ?>
-							<li class="hug"><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></li>
+							<?php include('content-program-listing.php'); ?>
 						<?php endforeach; ?>
 					</ul>
 
@@ -78,17 +78,7 @@ get_header(); ?>
 							$phd = get_field('doctoral_degree_awarded', $program->ID);
 							$certificate = get_field('certificate_awarded', $program->ID);
 						?>
-						<li class="grid-node col-3">
-							<hr>
-							<h3><a href="<?php echo get_permalink($program->ID); ?>"><?php echo get_the_title($program->ID); ?></a></h3>
-							<p class="hug small strong">
-								<?php
-								echo ($masters) ? "{$masters}<br>" : "";
-								echo ($phd) ? "{$phd}<br>" : "";
-								echo ($certificate) ? $certificate : "";
-								?>
-							</p>
-						</li>
+						<?php include('content-program-listing.php'); ?>
 					<?php endforeach; ?>
 				</ul>
 
